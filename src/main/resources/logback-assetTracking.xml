@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true">
+	<appender name="STDOUT"
+		class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${AZURE_LOGGING_DIR}/AssetTracking.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover -->
+			<fileNamePattern>${AZURE_LOGGING_DIR}/AssetTracking.%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+			<!-- keep x days' worth of history -->
+			<maxHistory>15</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d %-5level %logger - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<root level="INFO">
+		<appender-ref ref="FILE" />
+	</root>
+
+	<logger name="org.apache" additivity="false" level="ERROR">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.springframework" additivity="false"
+		level="INFO">
+		<appender-ref ref="FILE" />
+	</logger>
+
+	<logger name="org.hibernate" additivity="false" level="WARN">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.hibernate.sql" additivity="false" level="WARN">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.hibernate.bind" additivity="false"
+		level="WARN">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.hibernate.type" additivity="false"
+		level="WARN">
+		<appender-ref ref="FILE" />
+	</logger>
+	<logger name="org.hibernate.engine.query.QueryParameters"
+		additivity="false" level="WARN">
+		<appender-ref ref="FILE" />
+	</logger>
+
+</configuration>

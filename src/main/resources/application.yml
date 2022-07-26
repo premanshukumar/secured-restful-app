@@ -21,6 +21,8 @@ spring:
 
 spring.jpa.database-platform: org.hibernate.dialect.SQLServer2012Dialect
 spring.main.allow-bean-definition-overriding : true
+logging.config: classpath:logback-assetTracking.xml
+
 
 server:
   port: 9191
