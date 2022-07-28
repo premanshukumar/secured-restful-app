@@ -35,7 +35,7 @@ public class SampleController {
 	@Autowired
 	private EmployeeRepo repo;
 	
-	@GetMapping("/")
+	@GetMapping("/home")
 	@PreAuthorize("hasRole('ROLE_kgpcodemo')") // This is validating against user
 	@ResponseStatus(HttpStatus.OK)
 	public String showWelcomeMsg() {
