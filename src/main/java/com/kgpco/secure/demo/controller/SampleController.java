@@ -35,6 +35,13 @@ public class SampleController {
 	@Autowired
 	private EmployeeRepo repo;
 
+	@GetMapping("/welcome")
+	public String showWelcome() {
+		return "Welcome webapp team!!";
+	}
+
+	
+	
 	@GetMapping("/home")
 	public String showWelcomeMsg() {
 		return "Welcome to the Azure Demo Application!!";
