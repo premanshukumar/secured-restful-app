@@ -34,10 +34,8 @@ public class SampleController {
 
 	@Autowired
 	private EmployeeRepo repo;
-	
+
 	@GetMapping("/home")
-	@PreAuthorize("hasRole('ROLE_kgpcodemo')") // This is validating against user
-	@ResponseStatus(HttpStatus.OK)
 	public String showWelcomeMsg() {
 		return "Welcome to the Azure Demo Application!!";
 	}
