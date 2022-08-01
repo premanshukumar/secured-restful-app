@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'secured-restful-demo'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A898691E76B4430EAC725E31E3F5E40D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AD5E9897133142ACB4B5F037C0E07823 }}
           package: '*.jar'
