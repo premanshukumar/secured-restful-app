@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:sqlserver://secured-restful-server.database.windows.net:1433;database=secured-restful-db;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    username: ${DBUSERNAME}
-    password: ${DBPASSWORD}
+    username: securedapp
+    password: KGPCo123
   jpa:
     show-sql: true
     hibernate:
