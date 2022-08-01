@@ -1,8 +1,8 @@
 spring:
   datasource:
     url: jdbc:sqlserver://secured-restful-server.database.windows.net:1433;database=secured-restful-db;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
-    username: securedapp
-    password: KGPCo123
+    username: ${DBUSERNAME}
+    password: ${DBPASSWORD}
   jpa:
     show-sql: true
     hibernate:
@@ -23,6 +23,9 @@ spring.jpa.database-platform: org.hibernate.dialect.SQLServer2012Dialect
 spring.main.allow-bean-definition-overriding : true
 logging.config: classpath:logback-assetTracking.xml
 
+spring.cloud.azure.keyvault.secret.credential.client-id: caf5672d-d442-4e85-b81e-7b360e78911f
+spring.cloud.azure.keyvault.secret.credential.client-secret: UmE8Q~4REYhLf9DtAH_ywLzAETBF-lSkZ8i-Rdxo
+spring.cloud.azure.keyvault.secret.endpoint: https://secured-restful-vault.vault.azure.net/
 
 server:
   port: 9191
